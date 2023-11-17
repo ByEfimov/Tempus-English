@@ -1,0 +1,39 @@
+.Preloader {
+    display: flex;
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100dvw;
+    align-items: center;
+    user-select: none;
+    justify-content: center;
+    animation: openPopup 0.5s forwards;
+    background-color: var(--secondBackgroudColor);
+    img {
+        height: 70px;
+    }
+}
+
+.Preloader.close {
+    animation: closePopup 0.5s forwards;
+}
+
+@keyframes closePopup {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes openPopup {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

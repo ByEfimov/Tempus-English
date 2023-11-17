@@ -1,0 +1,16 @@
+html {
+    --mainTextColor: #502632;
+    --secondTextColor: #333;
+    --thirdTextColor: #fff;
+    --mainBackgroudColor: #f3e8e6;
+    --secondBackgroudColor: #edd3c4;
+    --thirdBackgroudColor: #efdcd8;
+    --fhourBackgroudColor: #c59187;
+
+    --blureBack: rgba(3, 3, 3, 0.5);
+
+    --mainBoxShadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    --activeBoxShadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.4);
+
+    --mainMarginTop: calc(8vh + 20px);
+}

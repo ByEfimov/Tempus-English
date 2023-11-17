@@ -1,0 +1,166 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    gap: 20px;
+    z-index: 1000;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--mainBackgroudColor);
+    left: 0;
+    .FavoritsButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 56px;
+        border: 1px solid var(--fhourBackgroudColor);
+        width: 56px;
+        background-color: var(--thirdBackgroudColor);
+    }
+    .AddWordButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 56px;
+        width: 56px;
+        border: 1px solid var(--fhourBackgroudColor);
+        background-color: var(--thirdBackgroudColor);
+    }
+    .LoginButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 56px;
+        width: 56px;
+        border: 1px solid var(--fhourBackgroudColor);
+        background-color: var(--thirdBackgroudColor);
+    }
+    .input {
+        border: 1px solid var(--fhourBackgroudColor);
+        width: 750px;
+        border-radius: 50px;
+        background-color: var(--thirdBackgroudColor);
+        * {
+            color: var(--mainTextColor);
+            font-weight: 500;
+            border: none;
+        }
+        label {
+            color: var(--mainTextColor);
+        }
+    }
+}
+
+.MostGrouops {
+    margin-top: 105px;
+    display: flex;
+    gap: 15px;
+    max-width: 900px;
+    overflow: hidden;
+    padding-top: 50px;
+    position: relative;
+    button {
+        animation: addWord forwards 0.3s;
+    }
+
+    .title {
+        width: 100%;
+        display: flex;
+        padding-bottom: 4px;
+        justify-content: center;
+        border-bottom: 3px solid var(--fhourBackgroudColor);
+        padding-left: 5px;
+        top: 0;
+        z-index: 0;
+        font-weight: 500;
+        font-size: 20px;
+        position: absolute;
+    }
+    .Group {
+        border-radius: 40px;
+        font-weight: 500;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 20px;
+        color: var(--thirdTextColor);
+        background-color: var(--fhourBackgroudColor);
+    }
+}
+
+.Words {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 18px;
+    overflow: hidden;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-top: 40px;
+    position: relative;
+    .title {
+        width: 100%;
+        display: flex;
+        padding-bottom: 4px;
+        justify-content: center;
+        border-bottom: 3px solid var(--fhourBackgroudColor);
+        padding-left: 5px;
+        top: 0;
+        z-index: 0;
+        font-weight: 500;
+        font-size: 20px;
+        position: absolute;
+    }
+
+    .Group {
+        max-height: 290px;
+        overflow: hidden;
+        position: relative;
+        margin-top: 10px;
+        max-width: 32%;
+        width: 32%;
+        .GroupTitle {
+            cursor: pointer;
+            animation: 0.3s forwards addWord;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 20px;
+            font-weight: 500;
+            padding: 10px;
+            background-color: var(--thirdBackgroudColor);
+        }
+        .words {
+            animation: 0.3s forwards addWord;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-left: 10px;
+            margin-top: 5px;
+            gap: 2px;
+            font-size: 16px;
+        }
+    }
+}
+
+.Footer {
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    padding-right: 0px;
+    font-weight: 500;
+    border-top: 3px solid var(--thirdBackgroudColor);
+    color: var(--mainTextColor);
+}
+@keyframes addWord {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
