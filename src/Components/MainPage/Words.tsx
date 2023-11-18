@@ -5,7 +5,6 @@ import { useWords } from '../../Hooks/useWords';
 const Words = () => {
     const navigate = useNavigate();
     const { FilteredWords } = useWords();
-    console.log(FilteredWords);
     return (
         <div className={Styles.Words}>
             <div className={Styles.title}>Слова</div>

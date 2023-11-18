@@ -3,7 +3,6 @@ import { useAppSelector } from './redux-hooks';
 export function useWords() {
     const { words, groups, lastOpenWords, favoritsWords, currentFilter } =
         useAppSelector((state) => state.words);
-    console.log(lastOpenWords);
 
     const wordsArray =
         words &&
