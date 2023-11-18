@@ -14,10 +14,9 @@ export default function ModalGroup() {
 
     const { Words, Groups } = useWords();
     const desiredObject = Words.find((item) => item.title == selectGroup);
-    console.log(Groups);
 
     function removeGroup() {
-        if (Object.keys(Groups).length > 1) {
+        if (Array.isArray(Groups) && Object.keys(Groups).length > 1) {
             const db = getDatabase();
             set(ref(db, 'Groups/' + desiredObject?.title), null);
             set(ref(db, 'Words/' + desiredObject?.title), null);
@@ -41,7 +40,7 @@ export default function ModalGroup() {
                 </div>
                 <div className={Styles.Wods}>
                     {desiredObject?.words?.length || [].length > 0 ? (
-                        desiredObject?.words?.map((word: any) => (
+                        desiredObject?.words?.map((word) => (
                             <button
                                 onClick={() =>
                                     navigate('/Word/' + word.inputWord)

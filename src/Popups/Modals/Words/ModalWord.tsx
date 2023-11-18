@@ -3,6 +3,7 @@ import ModalWindow, { closePopupF } from '../isModal';
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../../Hooks/redux-hooks';
 import {
+    Word,
     addFavoriteWord,
     addOpenWord,
     removeFavoriteWord,
@@ -21,20 +22,22 @@ export default function ModalWord() {
 
     const dispatch = useAppDispatch();
     useEffect(() => {
-        dispatch(addOpenWord({ word: selectWord }));
+        dispatch(addOpenWord({ word: selectWord || '' }));
     }, []);
 
-    const desiredObject = Words.find((item) =>
+    const desiredObject: Word | undefined = Words.find((item) =>
         item.words.some((word) => word.inputWord === selectWord)
     )?.words.find((word) => word.inputWord === selectWord);
 
-    const isFav = Favorits.find((i: any) => i === desiredObject?.inputWord);
+    const isFav = Favorits.find((i) => i === desiredObject?.inputWord);
 
     function favWord() {
         if (!isFav) {
-            dispatch(addFavoriteWord({ word: desiredObject?.inputWord }));
+            dispatch(addFavoriteWord({ word: desiredObject?.inputWord || '' }));
         } else {
-            dispatch(removeFavoriteWord({ word: desiredObject?.inputWord }));
+            dispatch(
+                removeFavoriteWord({ word: desiredObject?.inputWord || '' })
+            );
         }
     }
 

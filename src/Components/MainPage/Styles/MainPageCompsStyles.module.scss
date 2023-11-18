@@ -16,9 +16,9 @@
         justify-content: center;
         align-items: center;
         border-radius: 50px;
-        height: 56px;
+        min-height: 56px;
+        min-width: 56px;
         border: 1px solid var(--fhourBackgroudColor);
-        width: 56px;
         background-color: var(--thirdBackgroudColor);
     }
     .AddWordButton {
@@ -26,8 +26,8 @@
         justify-content: center;
         align-items: center;
         border-radius: 50px;
-        height: 56px;
-        width: 56px;
+        min-height: 56px;
+        min-width: 56px;
         border: 1px solid var(--fhourBackgroudColor);
         background-color: var(--thirdBackgroudColor);
     }
@@ -36,8 +36,8 @@
         justify-content: center;
         align-items: center;
         border-radius: 50px;
-        height: 56px;
-        width: 56px;
+        min-height: 56px;
+        min-width: 56px;
         border: 1px solid var(--fhourBackgroudColor);
         background-color: var(--thirdBackgroudColor);
     }
@@ -54,6 +54,16 @@
         label {
             color: var(--mainTextColor);
         }
+    }
+}
+@media (max-width: 920px) {
+    .Header {
+        padding: 0 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    html {
+        padding: 0 20px;
     }
 }
 
@@ -162,5 +172,88 @@
     }
     100% {
         transform: scale(1);
+    }
+}
+@media (max-width: 768px) {
+    .MostGrouops {
+        margin-top: 90px;
+    }
+
+    .Words {
+        .Group {
+            max-width: 48%;
+            width: 48%;
+        }
+    }
+    .Header {
+        padding: 0 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .input {
+            height: 50px;
+            align-items: center;
+            display: flex;
+        }
+        .LoginButton {
+            min-height: 50px;
+            min-width: 50px;
+        }
+        .AddWordButton {
+            min-height: 50px;
+            min-width: 50px;
+        }
+        .FavoritsButton {
+            min-height: 50px;
+            min-width: 50px;
+        }
+    }
+    html {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .MostGrouops {
+        margin-top: 80px;
+        gap: 10px;
+        .Group {
+            font-size: 14px;
+        }
+    }
+
+    .Words {
+        .Group {
+            max-width: 100%;
+            width: 100%;
+            .GroupTitle {
+                font-size: 17px;
+            }
+        }
+    }
+    .Header {
+        padding: 0 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        gap: 15px;
+        .input {
+            height: 45px;
+            align-items: center;
+            display: flex;
+        }
+        .LoginButton {
+            min-height: 45px;
+            min-width: 45px;
+        }
+        .AddWordButton {
+            min-height: 45px;
+            min-width: 45px;
+        }
+        .FavoritsButton {
+            min-height: 45px;
+            min-width: 45px;
+        }
+    }
+    html {
+        padding: 0 10px;
     }
 }

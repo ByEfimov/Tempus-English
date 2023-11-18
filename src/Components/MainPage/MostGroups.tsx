@@ -10,7 +10,7 @@ const MostGroups = () => {
         <div className={Styles.MostGrouops}>
             <div className={Styles.title}>Последние</div>
             {LastWords.length > 0 ? (
-                LastWords?.map((word: any) => (
+                LastWords?.map((word) => (
                     <button
                         className={Styles.Group}
                         onClick={() => navigate('/Word/' + word)}

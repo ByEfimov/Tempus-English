@@ -12,7 +12,7 @@ export default function ModalFavorite() {
                 <div className={Styles.ModalTitle}>Избранное</div>
                 <div className={Styles.Wods}>
                     {Favorits.length > 0 ? (
-                        Favorits.map((word: any) => (
+                        Favorits.map((word) => (
                             <button onClick={() => navigate('/Word/' + word)}>
                                 {word}
                             </button>

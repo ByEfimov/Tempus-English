@@ -11,11 +11,24 @@ html {
     color: var(--mainTextColor);
 }
 
-html:has(dialog) {
-    padding-right: 10px;
-    overflow: hidden;
-    ._Header_1atsw_1 {
+@media (min-width: 1600px) {
+    html:has(dialog) {
         padding-right: 10px;
+        overflow: hidden;
+        ._Header_1atsw_1 {
+            padding-right: 10px;
+        }
+    }
+}
+@media (max-width: 920px) {
+    html {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        padding: 0 10px;
     }
 }
 

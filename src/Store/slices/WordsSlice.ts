@@ -1,14 +1,33 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type UserType = {
-    words: any;
-    groups: any;
-    lastOpenWords: any;
-    favoritsWords: any;
-    currentFilter: string;
-};
+export interface Word {
+    inputGroup: string;
+    inputPartofspeech: string;
+    inputTranslate: string;
+    inputUsage: string;
+    inputUsageTranslate: string;
+    inputWord: string;
+}
 
-const initialState: UserType = {
+export interface WordList {
+    [key: string]: {
+        [key: string]: Word;
+    };
+}
+
+export interface groups {
+    [key: string]: string;
+}
+
+export interface WordsType {
+    words: WordList | null;
+    groups: groups | null;
+    lastOpenWords: string[];
+    favoritsWords: string[];
+    currentFilter: string;
+}
+
+const initialState: WordsType = {
     words: null,
     groups: null,
     lastOpenWords: [],
@@ -23,7 +42,7 @@ const WordsSlice = createSlice({
         setWords(
             state,
             action: PayloadAction<{
-                words: any;
+                words: WordList;
             }>
         ) {
             state.words = action.payload.words;
@@ -31,7 +50,7 @@ const WordsSlice = createSlice({
         setFilter(
             state,
             action: PayloadAction<{
-                currentFilter: any;
+                currentFilter: string;
             }>
         ) {
             state.currentFilter = action.payload.currentFilter;
@@ -39,7 +58,7 @@ const WordsSlice = createSlice({
         setGroups(
             state,
             action: PayloadAction<{
-                groups: any;
+                groups: groups;
             }>
         ) {
             state.groups = action.payload.groups;
@@ -47,12 +66,12 @@ const WordsSlice = createSlice({
         addOpenWord(
             state,
             action: PayloadAction<{
-                word: any;
+                word: string | undefined;
             }>
         ) {
             if (state.lastOpenWords[0] != action.payload.word) {
                 state.lastOpenWords = [
-                    action.payload.word,
+                    action.payload.word || '',
                     ...state.lastOpenWords,
                 ];
             }
@@ -60,18 +79,21 @@ const WordsSlice = createSlice({
         addFavoriteWord(
             state,
             action: PayloadAction<{
-                word: any;
+                word: string | undefined;
             }>
         ) {
-            state.favoritsWords = [action.payload.word, ...state.favoritsWords];
+            state.favoritsWords = [
+                action.payload.word || '',
+                ...state.favoritsWords,
+            ];
         },
         removeFavoriteWord(
             state,
             action: PayloadAction<{
-                word: any;
+                word: string | undefined;
             }>
         ) {
-            let index = state.favoritsWords.indexOf(action.payload.word);
+            let index = state.favoritsWords.indexOf(action.payload.word || '');
             index !== -1 && state.favoritsWords.splice(index, 1);
         },
     },

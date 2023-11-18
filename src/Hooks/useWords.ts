@@ -3,19 +3,9 @@ import { useAppSelector } from './redux-hooks';
 export function useWords() {
     const { words, groups, lastOpenWords, favoritsWords, currentFilter } =
         useAppSelector((state) => state.words);
-    interface Word {
-        inputGroup: string;
-        inputPartofspeech: string;
-        inputTranslate: string;
-        inputUsage: string;
-        inputUsageTranslate: string;
-        inputWord: string;
-    }
-    interface Groups {
-        title: string;
-        words: Word[];
-    }
-    const wordsArray: Groups[] =
+    console.log(lastOpenWords);
+
+    const wordsArray =
         words &&
         Object.keys(words).map((title) => {
             return { title, words: Object.values(words[title]) };
